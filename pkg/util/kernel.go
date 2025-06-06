@@ -4,10 +4,15 @@ import (
 	"fmt"
 	"os"
 	"strings"
+
+	log "github.com/sirupsen/logrus"
 )
 
 func KernelValue(key string) string {
-	value, _ := os.ReadFile(key)
+	value, err := os.ReadFile(key)
+	if err != nil {
+		log.Errorf("读取内核参数失败: %v", err)
+	}
 	return strings.TrimSpace(string(value))
 }
 
