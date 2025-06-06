@@ -1,0 +1,6 @@
+title = "node diag配置"
+
+[plugins]
+enabledPlugins = []
+disabledPlugins = []
+
